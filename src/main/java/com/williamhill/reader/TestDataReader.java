@@ -1,6 +1,5 @@
 package com.williamhill.reader;
 
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,6 @@ public class TestDataReader {
             FileInputStream fis = new FileInputStream(new File(FILE));
             reader = new CSVReader(new InputStreamReader(fis, "UTF-8"));
             reader.readHeaders();
-            //como encontro el metodo readRecord
             while (reader.readRecord()) {
                 testDataList.add(new TestData(reader.get("SPORT"), reader.get("EVENT")));
             }
